@@ -1,5 +1,16 @@
-public class Hufflepuff extends Hogwards{
+public class Hufflepuff extends Hogwarts{
 
+    public void compareAnyStudentsHufflepuff(Hufflepuff second) {
+        int sumOne = this.getHardWork() + this.getLoyalty() + this.getHonesty();
+        int sumTwo = second.getHardWork() + second.getLoyalty() + second.getHonesty();
+        if (sumOne > sumTwo) {
+            System.out.println(this.getName() + " имеет " + sumOne + " баллов. " + second.getName() + " имеет " + sumTwo + " баллов. Соответствено " + this.getName() + " лучший Пуффендуец, чем " + second.getName() + ".");
+        } else if (sumOne == sumTwo) {
+            System.out.println(this.getName() + " и " + second.getName() + " по сумме баллов равны.");
+        } else {
+            System.out.println(second.getName() + " имеет " + sumTwo + " баллов. " + this.getName() + " имеет " + sumOne + " баллов. Соответствено " + second.getName() + " лучший Пуффендуец, чем " + this.getName() + ".");
+        }
+    }
     private int hardWork; //трудолюбивость
     private int loyalty; //верность
     private int honesty; //честность
@@ -33,5 +44,14 @@ public class Hufflepuff extends Hogwards{
 
     public void setHonesty(int honesty) {
         this.honesty = honesty;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "трудолюбивость: " + hardWork +
+                ", верность: " + loyalty +
+                ", честность: " + honesty + ", факультет: Пуффендуй" +
+                "} ";
     }
 }

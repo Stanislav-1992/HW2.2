@@ -1,4 +1,16 @@
-public class Slytherin extends Hogwards{
+public class Slytherin extends Hogwarts{
+
+    public void compareAnyStudentsSlytherin(Slytherin second) {
+        int sumOne = this.getCunning() + this.getDetermination() + this.getAmbition() + this.getResourcefulness() + this.getAuthority();
+        int sumTwo = second.getCunning() + second.getDetermination() + second.getAmbition() + second.getResourcefulness() + second.getAuthority();
+        if (sumOne > sumTwo) {
+            System.out.println(this.getName() + " имеет " + sumOne + " баллов. " + second.getName() + " имеет " + sumTwo + " баллов. Соответствено " + this.getName() + " лучший Слизеринец, чем " + second.getName() + ".");
+        } else if (sumOne == sumTwo) {
+            System.out.println(this.getName() + " и " + second.getName() + " по сумме баллов равны.");
+        } else {
+            System.out.println(second.getName() + " имеет " + sumTwo + " баллов. " + this.getName() + " имеет " + sumOne + " баллов. Соответствено " + second.getName() + " лучший Слизеринец, чем " + this.getName() + ".");
+        }
+    }
     private int cunning; //хитрость
     private int determination; //решительность
     private int ambition; //амбициозность
@@ -56,12 +68,12 @@ public class Slytherin extends Hogwards{
 
     @Override
     public String toString() {
-        return "Slytherin{" +
-                "cunning=" + cunning +
-                ", determination=" + determination +
-                ", ambition=" + ambition +
-                ", resourcefulness=" + resourcefulness +
-                ", authority=" + authority +
-                '}';
+        return super.toString() +
+                "хитрость: " + cunning +
+                ", решительность: " + determination +
+                ", амбициозность: " + ambition +
+                ", находчивость: " + resourcefulness +
+                ", властность: " + authority + ", факультет: Слизерин" +
+                "} ";
     }
 }

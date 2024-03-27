@@ -1,4 +1,16 @@
-public class Ravenclaw extends Hogwards{
+public class Ravenclaw extends Hogwarts{
+
+    public void compareAnyStudentsRavenclaw(Ravenclaw second) {
+        int sumOne = this.getIntelligence() + this.getWisdom() + this.getWit() + this.getCreation();
+        int sumTwo = second.getIntelligence() + second.getWisdom() + second.getWit() + this.getCreation();
+        if (sumOne > sumTwo) {
+            System.out.println(this.getName() + " имеет " + sumOne + " баллов. " + second.getName() + " имеет " + sumTwo + " баллов. Соответствено " + this.getName() + " лучший Когтевранец, чем " + second.getName() + ".");
+        } else if (sumOne == sumTwo) {
+            System.out.println(this.getName() + " и " + second.getName() + " по сумме баллов равны.");
+        } else {
+            System.out.println(second.getName() + " имеет " + sumTwo + " баллов. " + this.getName() + " имеет " + sumOne + " баллов. Соответствено " + second.getName() + " лучший Когтевранец, чем " + this.getName() + ".");
+        }
+    }
     private int intelligence; //ум
     private int wisdom; //мудрость
     private int wit; //остроумность
@@ -42,5 +54,15 @@ public class Ravenclaw extends Hogwards{
 
     public void setCreation(int creation) {
         this.creation = creation;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "ум: " + intelligence +
+                ", мудрость: " + wisdom +
+                ", остроумность: " + wit +
+                ", творчество: " + creation +  ", факультет: Когтевран" +
+                "} ";
     }
 }

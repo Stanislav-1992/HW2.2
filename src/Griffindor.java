@@ -1,4 +1,17 @@
-public class Griffindor extends Hogwards{
+public class Griffindor extends Hogwarts{
+
+    public void compareAnyStudentsGriffindor(Griffindor second) {
+        int sumOne = this.getHardWork() + this.getHonor() + this.getCourage();
+        int sumTwo = second.getHardWork() + second.getHonor() + second.getCourage();
+        if (sumOne > sumTwo) {
+            System.out.println(this.getName() + " имеет " + sumOne + " баллов. " + second.getName() + " имеет " + sumTwo + " баллов. Соответствено " + this.getName() + " лучший Гриффиндорец, чем " + second.getName() + ".");
+        } else if (sumOne == sumTwo) {
+            System.out.println(this.getName() + " и " + second.getName() + " по сумме баллов равны.");
+        } else {
+            System.out.println(second.getName() + " имеет " + sumTwo + " баллов. " + this.getName() + " имеет " + sumOne + " баллов. Соответствено " + second.getName() + " лучший Гриффиндорец, чем " + this.getName() + ".");
+        }
+    }
+
     private int nobility; //благородство
     private int honor; // честь
     private int courage; // храбрость
@@ -10,7 +23,7 @@ public class Griffindor extends Hogwards{
         this.courage = courage;
     }
 
-    public int getNobility() {
+    public int getHardWork() {
         return nobility;
     }
 
@@ -33,7 +46,13 @@ public class Griffindor extends Hogwards{
     public void setCourage(int courage) {
         this.courage = courage;
     }
-    public void printStudentOne() {
-        System.out.println("благородство: " + nobility + ", честь: " + honor + ", храбрость: " + courage + ".");
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "благородство: " + nobility +
+                ", честь: " + honor +
+                ", храбрость: " + courage + ", факультет Гриффиндор" +
+                "} ";
     }
 }
